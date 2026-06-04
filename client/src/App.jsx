@@ -12,7 +12,7 @@ function App() {
         <Route path="/upload" element={<UploadPage />} />
         <Route
           path="/posts/:id"
-          element={
+        element={
             <PostProvider>
               <Post />
             </PostProvider>

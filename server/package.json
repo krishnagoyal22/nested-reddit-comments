@@ -23,7 +23,7 @@
   "dependencies": {
     "@fastify/cookie": "^7.3.0",
     "@fastify/cors": "^8.0.0",
-    "@fastify/csrf-protection": "^0.7.0",
+    "@fastify/csrf-protection": "^6.4.1",
     "@fastify/multipart": "^8.0.0",
     "@fastify/sensible": "^5.1.0",
     "cloudinary": "^1.41.0",

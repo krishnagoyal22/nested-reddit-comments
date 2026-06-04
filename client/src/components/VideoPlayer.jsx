@@ -84,6 +84,7 @@ export function VideoPlayer({ videoUrl, thumbnailUrl, title }) {
         onPause={() => setIsPlaying(false)}
         onClick={togglePlay}
         className="video-element"
+        title={title}
       >
         Your browser does not support the video tag.
       </video>

@@ -1,5 +1,7 @@
+import { createElement } from "react"
 import "../styles.css"
-export function IconBtn({ Icon, isActive, color, children, ...props }) {
+
+export function IconBtn({ Icon: IconComponent, isActive, color, children, ...props }) {
   return (
     <button
       className={`btn icon-btn ${isActive ? "icon-btn-active" : ""} ${
@@ -8,7 +10,7 @@ export function IconBtn({ Icon, isActive, color, children, ...props }) {
       {...props}
     >
       <span className={`${children != null ? "mr-1" : ""}`}>
-        <Icon />
+        {createElement(IconComponent)}
       </span>
       {children}
     </button>

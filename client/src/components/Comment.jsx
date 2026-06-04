@@ -1,6 +1,6 @@
 import { IconBtn } from "./IconBtn"
 import { FaEdit, FaHeart, FaRegHeart, FaReply, FaTrash } from "react-icons/fa"
-import { usePost } from "../contexts/PostContext"
+import { usePost } from "../contexts/usePost"
 import { CommentList } from "./CommentList"
 import { useState } from "react"
 import { useAsyncFn } from "../hooks/useAsync"

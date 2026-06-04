@@ -1,4 +1,4 @@
-import { usePost } from "../contexts/PostContext"
+import { usePost } from "../contexts/usePost"
 import { useAsyncFn } from "../hooks/useAsync"
 import { createComment } from "../services/comments"
 import { CommentForm } from "./CommentForm"

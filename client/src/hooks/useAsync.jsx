@@ -35,6 +35,8 @@ function useAsyncInternal(func, dependencies, initialLoading = false) {
       .finally(() => {
         setLoading(false)
       })
+    // The caller controls when a new async function should be captured.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, dependencies)
 
   return { loading, error, value, execute }

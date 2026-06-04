@@ -1,13 +1,8 @@
-import React, { useContext, useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { useParams } from "react-router-dom"
 import { useAsync } from "../hooks/useAsync"
 import { getPost } from "../services/posts"
-
-const Context = React.createContext()
-
-export function usePost() {
-  return useContext(Context)
-}
+import { Context } from "./usePost"
 
 export function PostProvider({ children }) {
   const { id } = useParams()
