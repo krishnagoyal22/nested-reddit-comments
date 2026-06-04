@@ -3,6 +3,8 @@ import { useAsyncFn } from "../hooks/useAsync"
 import { createComment } from "../services/comments"
 import { CommentForm } from "./CommentForm"
 import { CommentList } from "./CommentList"
+import { VideoPlayer } from "./VideoPlayer"
+import { formatTimeAgo, formatFileSize } from "../services/videos"
 import "../styles.css"
 
 export function Post() {
@@ -18,7 +20,28 @@ export function Post() {
   return (
     <>
       <h1>{post.title}</h1>
-      <article>{post.body}</article>
+
+      {post.videoUrl ? (
+        <div className="video-container">
+          <VideoPlayer
+            videoUrl={post.videoUrl}
+            thumbnailUrl={post.thumbnailUrl}
+            title={post.title}
+          />
+          <div className="video-metadata">
+            {post.user && <span className="video-author">By {post.user.name}</span>}
+            {post.uploadedAt && (
+              <span className="video-date">{formatTimeAgo(post.uploadedAt)}</span>
+            )}
+            {post.fileSize && (
+              <span className="video-size">{formatFileSize(post.fileSize)}</span>
+            )}
+          </div>
+        </div>
+      ) : null}
+
+      {post.body && <article>{post.body}</article>}
+
       <h3 className="comments-title">Comments</h3>
       <section>
         <CommentForm
